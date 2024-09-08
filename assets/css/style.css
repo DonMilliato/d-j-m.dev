@@ -1,0 +1,544 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* body {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #696969;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Robot", sans-serif;
+}
+
+p {
+  font-family: "Robot", sans-serif;
+  line-height: 25px;
+  font-weight: 500;
+  color: #777777;
+}
+
+/*--------------------------------------------------------------
+# Disable AOS delay on mobile
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light {
+    background-color: white;
+    color: black;
+}
+
+body.dark {
+    background-color: rgb(29, 28, 28);
+    color: white;
+}
+
+/* For auto mode, use system's color scheme preference */
+body.auto {
+    background-color: white; /* Default to light theme colors */
+    color: black;
+}
+
+/* Apply dark theme if the system prefers dark mode */
+@media (prefers-color-scheme: dark) {
+    body.auto {
+        background-color: black;
+        color: white;
+    }
+}
+
+/* Icon styles */
+#theme-dropdown {
+    position: absolute;
+    left: 75%;
+    top: 6.5%;
+    background-color: inherit;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#selected-theme-icon {
+    font-size: 24px;
+}
+
+#dropdown-content {
+    display: none;
+    position: absolute;
+    right: 25px;
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.452);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+    flex-direction: column;
+    gap: 1px;
+}
+
+#dropdown-content .theme-option {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Text color change based on theme */
+body.light #dropdown-content .theme-option span {
+    color: black;
+}
+
+body.dark #dropdown-content .theme-option span {
+    color: inherit;
+}
+
+body.auto #dropdown-content .theme-option span {
+    color: inherit;
+}
+
+#dropdown-content .theme-option i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+#theme-dropdown:hover #dropdown-content {
+    display: flex;
+}
+
+/* Additional styles for text elements */
+#text {
+    transition: color 0.3s;
+}
+
+body.light #text {
+    color: black;
+}
+
+body.dark #text {
+    color: white;
+}
+
+body.auto #text {
+    color: inherit;
+}
+
+/* Hover effects */
+body.light #text:hover {
+    color: grey;
+}
+
+body.dark #text:hover {
+    color: lightgrey;
+}
+
+body.auto #text:hover {
+    color: grey; /* This will be overridden by the media query if system prefers dark */
+}
+
+/* Position text below dropdown content */
+#content1 {
+  margin-top: 40%;
+}
+
+/* Move content further down when dropdown is open */
+#theme-dropdown:hover + #content1 {
+  margin-top: 130px; /* Adjust this value based on the height of dropdown content */
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body.auto #text:hover {
+        color: lightgrey;
+    }
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 600px) 1fr;
+  width: 90%;
+  padding: 20px;
+}
+
+.content {
+  grid-column: 2; /* Place the content in the middle column */
+  background-color: inherit;
+  padding: 50px;
+  padding-left: 0.9%;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  text-align: left;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr; /* Use a single column layout */
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
+  .content {
+      grid-column: 1; /* Use the single column */
+      padding: 35px; /* Adjust padding for smaller screens */
+      font-size: 1rem; /* Adjust font size for better readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+      padding: 45px; /* Further adjust padding for very small screens */
+      font-size: 0.9rem; /* Further adjust font size for very small screens */
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+ background-color: inherit;
+ transition: all 0.1s;
+ z-index: 997;
+ padding: 15px 0;
+ /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
+}  
+
+#header .logo {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: o.5px;
+  text-transform: uppercase;
+}
+
+#header .logo a {
+  color: inherit;
+  position: absolute;
+  left: 24%;
+  top: 6.5%;
+  font-family: "Black Ops One", system-ui;
+}
+
+/* #header .logo a span {
+  color: ;
+} */
+
+#header .logo img {
+  max-height: 40px;
+  position: relative;
+}
+
+/*--------------------------------------------------------------
+# Home Social Links
+--------------------------------------------------------------*/
+.d-flex {
+  display: flex;
+}
+.about-social-links {
+  margin-right: 20%;
+  padding: 15px;
+}
+
+.about-social-links a {
+  color: inherit;
+  display: inline-block;
+  line-height: 0px;
+  transition: 0,3s;
+  padding-left: 20px;
+}
+
+.about-social-links {
+  line-height: 0;
+}
+
+.about-social-links a:hover {
+  color: #b4b4b4;
+}
+
+@media (max-width: 768px) {
+    .aboutr-social-links {
+      padding: 0 15px 0 0;
+      border-left: 0;
+    }
+  }
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 40%;
+  top: 5%;
+}
+
+nav .nav-links a {
+  color: #fff;
+  font-family: "Robot", sans-serif;
+  font-size: 15px;
+  
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+/* Mobile Nav */
+/* Hide the mobile nav toggle on larger screens */
+.mobile-nav-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.452);
+      width: 15%;
+      position: absolute;
+      top: 70px; /* Adjust according to header height */
+      left: 65%;
+  }
+
+  nav .nav-links a {
+  font-family: "Robot", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  right: 70%;
+  }
+  
+  nav .nav-links.active {
+      display: flex;
+  }
+
+  .mobile-nav-toggle {
+      display: block;
+      position: absolute;
+      left: 90%;
+      top: 5.6%;
+  }
+
+  /* Default theme background */
+.nav .mobile-nav-toggle.default-theme .nav-links a {
+  background-color: #dfdede; /* Default background color */
+}
+
+/* Light theme background */
+.nav .mobile-nav-toggle.light-theme a {
+  background-color: #f9f9f9; /* Light background color */
+  color: #333; /* Light theme text color */
+}
+
+/* Dark theme background */
+.nav .mobile-nav-toggle.dark-theme a {
+  background-color: #ece8e8; /* Dark background color */
+  color: #f9f9f9; /* Dark theme text color */
+}
+
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h1 {
+  position: absolute;
+  bottom: 70%;
+  left: 30%;
+  text-align: left;
+}
+
+.about .content p{
+  position: absolute;
+  bottom: 90%;
+  left: 20%;
+}
+
+.about a span {
+  color: #1b2bbd;
+}
+
+.about a span:hover {
+  color: #1b2bbd85;
+}
+
+.about-page h4 {
+  color: #7e7d7d;
+}
+
+.about-page-image {
+  display: flex;
+  gap: 40px;
+}
+
+.about-page-image img {
+  border-radius: 15px;
+  display: block;
+}
+
+.about-paragraph {
+  position: relative;
+  bottom: 90%;
+}
+
+.connect-social-links {
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  gap: 10px; /* Space between the links */
+}
+
+.connect-social-links a {
+  background-color: #f0f0f09a; /* Background color for the links */
+  padding: 10px;
+  border-radius: 8px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Text color */
+  display: flex;
+  align-items: center;
+}
+
+.connect-social-links a:hover {
+  background-color: #ddd; /* Background color on hover */
+}
+
+.about-education img {
+ border-radius: 35px;
+} 
+
+
+/*--------------------------------------------------------------
+# Pinned Projects
+--------------------------------------------------------------*/
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  border-radius: 10px;
+  ;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.recent-project-card {
+  background: inherit;
+  border-radius: 10px;
+  padding: 20px;
+  
+}
+
+.recent-project-image {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.recent-project-info {
+  text-align: center;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+/*--------------------------------------------------------------
+# Projects
+--------------------------------------------------------------*/
+.project-name {
+  text-align: center;
+}
+
+.project-card a {
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card a:hover img {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a shadow on hover */
+}
+
+.recent-project-card {
+  background: inherit;
+  border-radius: 10px;
+  padding: 20px;
+  
+}
+
+.recent-project-image {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.recent-project-info {
+  text-align: center;
+}
+
+
+

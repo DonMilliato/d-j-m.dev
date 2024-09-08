@@ -1,0 +1,62 @@
+:root {
+    --light-background: #ffffff;
+    --dark-background: #333333;
+    --light-text: #000000;
+    --dark-text: #ffffff;
+}
+
+body.light-theme {
+    background-color: var(--light-background);
+    color: var(--light-text);
+}
+
+body.dark-theme {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.toggle-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+}
+
+.toggle-content.open {
+    transform: translateY(0);
+}
+
+.toggle-content p {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
