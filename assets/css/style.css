@@ -513,7 +513,9 @@ button.next {
 .project-name {
   text-align: center;
 }
-
+.project-card{
+  border-radius: 10px;
+}
 .project-card a {
   display: inline-block;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
