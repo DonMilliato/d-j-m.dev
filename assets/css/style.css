@@ -513,8 +513,11 @@ button.next {
 .project-name {
   text-align: center;
 }
-.project-card{
-  border-radius: 10px;
+
+.project-card {
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 30px;;
 }
 .project-card a {
   display: inline-block;
